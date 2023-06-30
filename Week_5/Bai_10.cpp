@@ -7,10 +7,11 @@ int main (){
 	int SLna=0,SLpa=0,SLphim=0;
 	printf("Nhap vao ky tu: \n");
 	do{
+		fflush(stdin);
 		scanf("%c",&c);
-		C = toupper(c);
-		if(C>='A'&& C<='Z'){
-			switch(C){
+		if(	toupper(c)>='A'&& 	toupper(c)<='Z'){
+			switch(toupper(c))
+			{
 				case 'A':
 				case 'E':
 				case 'I':
@@ -27,10 +28,10 @@ int main (){
 				}
 			}
 		}
-		else{
+		else if (c!=10){
 			SLphim++;
 		}
 	}
-	while(C!='\n');
-	printf ("So luong nguyen am la: %d\nSo luong phu am la: %d\nSo luong phim la: %d",SLna,SLpa,SLphim-1);
+	while(c!='\n');
+	printf ("So luong nguyen am la: %d\nSo luong phu am la: %d\nSo luong phim la: %d",SLna,SLpa,SLphim);
 }
