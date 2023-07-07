@@ -68,7 +68,23 @@ void AVGArr(int a[], int n){
 	printf ("\nGia tri trung binh cua mang: %f",(float)S/n);
 }
 void DemPt( int a[], int n){
-	
+	int i,dv,dem=0;
+	for (i=0;i<n;i++){
+		dv=abs(a[i])%10;
+		if(a[i]%4==0&&dv==6){
+			dem++;
+		}
+	}
+	printf ("\nSo phan tu thoa man chia het cho 4 va tan cung la 6 la: %d",dem);
+}
+void ThayPtle(int a[],int n){
+	int i;
+	for(i=0;i<n;i++){
+		if(a[i]%2!=0){
+			a[i]=a[i]*2;
+		}
+	}
+	OutputArr(a,n);
 }
 void AddArr( int a[], int &n){
 	int x,i,y;
@@ -121,12 +137,14 @@ int main (){
 	scanf("%d",&n);
 	InputArr(a,n);
 	OutputArr(a,n);
-//	SNT(a,n);
-//	Inkhoang(a,n);
-//	InPt(a,n);
+	SNT(a,n);
+	Inkhoang(a,n);
+	InPt(a,n);
 	AVGArr(a,n);
-//	AddArr(a,n);
-//	DeleteArr(a,n);
-//	CheckFind(a,n);
+	DemPt(a,n);
+	ThayPtle(a,n);
+	AddArr(a,n);
+	DeleteArr(a,n);
+	CheckFind(a,n);
 
 }
